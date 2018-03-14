@@ -1,0 +1,11 @@
+framework module Scalar2D {
+  umbrella header "Scalar2D.h"
+
+  export *
+  module * { export * }
+}
+
+module Scalar2D.Swift {
+    header "Scalar2D-Swift.h"
+    requires objc
+}

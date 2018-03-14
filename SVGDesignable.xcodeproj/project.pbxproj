@@ -13,6 +13,8 @@
 		367B076A20592F7A0093F9CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 367B076920592F7A0093F9CA /* Assets.xcassets */; };
 		367B076D20592F7A0093F9CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 367B076B20592F7A0093F9CA /* LaunchScreen.storyboard */; };
 		367B077820592F7A0093F9CA /* SVGDesignableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367B077720592F7A0093F9CA /* SVGDesignableTests.swift */; };
+		367B078520592FE40093F9CA /* Scalar2D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 367B078320592FD10093F9CA /* Scalar2D.framework */; };
+		367B078620592FE40093F9CA /* Scalar2D.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 367B078320592FD10093F9CA /* Scalar2D.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +27,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		367B078720592FE40093F9CA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				367B078620592FE40093F9CA /* Scalar2D.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		367B075F20592F790093F9CA /* SVGDesignable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SVGDesignable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		367B076220592F7A0093F9CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +52,7 @@
 		367B077320592F7A0093F9CA /* SVGDesignableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SVGDesignableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		367B077720592F7A0093F9CA /* SVGDesignableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGDesignableTests.swift; sourceTree = "<group>"; };
 		367B077920592F7A0093F9CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		367B078320592FD10093F9CA /* Scalar2D.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Scalar2D.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				367B078520592FE40093F9CA /* Scalar2D.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +77,7 @@
 		367B075620592F790093F9CA = {
 			isa = PBXGroup;
 			children = (
+				367B078220592F8B0093F9CA /* Dependencies */,
 				367B076120592F790093F9CA /* SVGDesignable */,
 				367B077620592F7A0093F9CA /* SVGDesignableTests */,
 				367B076020592F790093F9CA /* Products */,
@@ -96,6 +115,14 @@
 			path = SVGDesignableTests;
 			sourceTree = "<group>";
 		};
+		367B078220592F8B0093F9CA /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				367B078320592FD10093F9CA /* Scalar2D.framework */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,6 +133,7 @@
 				367B075B20592F790093F9CA /* Sources */,
 				367B075C20592F790093F9CA /* Frameworks */,
 				367B075D20592F790093F9CA /* Resources */,
+				367B078720592FE40093F9CA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -354,6 +382,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Dependencies",
+				);
 				INFOPLIST_FILE = SVGDesignable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.lexilabs.SVGDesignable;
@@ -368,6 +400,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Dependencies",
+				);
 				INFOPLIST_FILE = SVGDesignable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.lexilabs.SVGDesignable;
